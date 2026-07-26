@@ -1275,7 +1275,7 @@ class TextEngine<
       }
 
       const pendingPhase = yield* this.checkForPendingToolCalls()
-      if (pendingPhase === 'wait') {
+      if (pendingPhase === 'stop' || pendingPhase === 'wait') {
         await this.runTerminalHook()
         return
       }
